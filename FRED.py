@@ -5,8 +5,8 @@ state_ids = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL',
              'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA',
              'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE',
              'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
-             'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'TN', 'UT',
-             'VT', 'VA', 'WA', 'WI', 'WY']
+             'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT',
+             'VA', 'WA', 'WI', 'WV', 'WY']
 
 for x in state_ids:
   HCPC = f"https://api.stlouisfed.org/fred/series/observations?series_id={x}PCEPCHLTHCARE&api_key={key}&file_type=json"
