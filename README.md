@@ -3,7 +3,7 @@ This project analyzes healthcare expenditure data in the United States. The data
 The project focuses on the following relationships:
 
 # Income and healthcare expenditure: 
-This analysis explores how income levels affect spending on Medicaid.
+This analysis explores how income levels affect spending on Medicaid in addition to Medicaid Expansion Adoption (ACA) The Data shows a weak relationship between Medicaid Expansion and Medicaid spending.
 # Health insurance types: 
 The project compares expenditures across different health insurance categories, including Medicare, Medicaid, and Private Insurance.
 # Regional health expenditure: 
