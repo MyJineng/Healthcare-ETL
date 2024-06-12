@@ -1,6 +1,6 @@
 --change table names
 ALTER TABLE "private_ins_per_enrollee"
-RENAME TO private_Insurance;
+RENAME TO private_insurance;
 --call tables
 SELECT * FROM medicare;
 SELECT * FROM private_insurance;
@@ -9,7 +9,7 @@ SELECT * FROM medicaid;
 --inner join on three tables - 2010
 SELECT medicare."region/state of residence", medicare."2010", private_insurance."2010", medicaid."2010" FROM private_insurance
 INNER JOIN medicare
-ON medicare."region/state of residence" = private_insurance."state"
+ON medicare."region/state of residence" = private_insurance."region/state of residence"
 INNER JOIN medicaid
 ON medicaid."region/state of residence" = medicare."region/state of residence";
 
@@ -34,7 +34,7 @@ ON medicaid."region/state of residence" = medicare."region/state of residence";
 --Downloaded table to folder and named it "Comparison_2020"
 
 ---merge all comparisons on state
-SELECT medicare."State", medicare."2010", private_insurance."2010", medicaid."2010", 
+SELECT medicare."region/state of residence", medicare."2010", private_insurance."2010", medicaid."2010", 
 		medicare."2015", private_insurance."2015", medicaid."2015",
 		medicare."2020", private_insurance."2020", medicaid."2020" FROM private_insurance
 INNER JOIN medicare
@@ -103,4 +103,3 @@ SELECT * FROM "2015_Comparison";
 SELECT * FROM "2020_Comparison";
 
 SELECT * FROM "Comparisons";
-
