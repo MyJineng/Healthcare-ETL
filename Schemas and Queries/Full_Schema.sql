@@ -1,5 +1,5 @@
 CREATE TABLE "private_ins_per_enrollee" (
-    "region/state of Residence" varchar   NOT NULL,
+    "region/state of residence" varchar   NOT NULL,
     "2008" int   NOT NULL,
     "2009" int   NOT NULL,
     "2010" int   NOT NULL,
