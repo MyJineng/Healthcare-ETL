@@ -1,32 +1,7 @@
-Create Table "Income_per_capita" (
-	"Region/state of residence" VARCHAR NOT NULL,
-	"2008" int NOT NULL,
-	"2009" int NOT NULL,
-	"2010" int NOT NULL,
-	"2011" int NOT NULL,
-	"2012" int NOT NULL,
-	"2013" int NOT NULL,
-	"2014" int NOT NULL,
-	"2015" int NOT NULL,
-	"2016" int NOT NULL,
-	"2017" int NOT NULL,
-	"2018" int NOT NULL,
-	"2019" int NOT NULL,
-	"2020" int NOT NULL,
-	"2021" int NOT NULL,
-	"2022" int NOT NULL,	
-
-CONSTRAINT "pk_Income_per_capita" PRIMARY KEY (
-        "Region/state of residence"
-     )
-);
-
-ALTER TABLE "Income_per_capita"
+ALTER TABLE "income_per_capita"
 DROP COLUMN "2021",
-DROP COLUMN "2022"; 
+DROP COLUMN "2022";
 
-Drop Table "Regional_averages_income"
-Drop Table "regional_averages_income"
 CREATE TABLE "regional_averages_income" AS
 SELECT 
     region,
@@ -58,7 +33,7 @@ FROM
             END AS region,
             "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"
         FROM 
-            "Income_per_capita"
+            "income_per_capita"
     ) AS subquery
 WHERE 
     region IS NOT NULL
@@ -125,5 +100,4 @@ ALTER TABLE "regional_averages_income"
 RENAME COLUMN avg_2020 TO "2020";
 
 Select * From "regional_averages_income";
-Select * From "Income_per_capita";
-
+Select * From "income_per_capita";
