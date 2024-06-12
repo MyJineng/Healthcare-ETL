@@ -14,6 +14,15 @@ St. Louis Fred Economic Data (2024). Income Per Capita Consumption Expenditures 
 %pip install matplotlib - for visualizations
 
 # Schema and Queries
+Full_Schema.sql --> 
+lst import realincome.csv and then personal_healthcare.csv
+2nd import rest of csvs
+
+PRI_MC_SCHEMA_SC.sql-->
+run query PRIV_MC_Query_SC.sql
+
+Personal Health Care by Region.sql-->
+run query Regional income per capita.sql
 
 The project focuses on the following relationships:
 
