@@ -4,7 +4,7 @@
 
 
 CREATE TABLE "Private_Ins_per_Enrollee" (
-    "State" varchar   NOT NULL,
+    "Region/state of residence" varchar   NOT NULL,
     "2008" int   NOT NULL,
     "2009" int   NOT NULL,
     "2010" int   NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE "Private_Ins_per_Enrollee" (
     "2019" int   NOT NULL,
     "2020" int   NOT NULL,
     CONSTRAINT "pk_Private_Ins_per_Enrollee" PRIMARY KEY (
-        "State"
+        "Region/state of residence"
      )
 );
 
@@ -138,7 +138,7 @@ CREATE TABLE "Income_per_capita" (
 );
 
 CREATE TABLE "Personal_Healthcare" (
-    "Region/State" varchar   NOT NULL,
+    "Region/state of residence" varchar   NOT NULL,
     "2008" float   NOT NULL,
     "2009" float   NOT NULL,
     "2010" float   NOT NULL,
@@ -153,12 +153,12 @@ CREATE TABLE "Personal_Healthcare" (
     "2019" float   NOT NULL,
     "2020" float   NOT NULL,
     CONSTRAINT "pk_Personal_Healthcare" PRIMARY KEY (
-        "Region/State"
+        "Region/state of residence"
      )
 );
 
 CREATE TABLE "Physicians_and_Clinics" (
-    "Region/State" varchar   NOT NULL,
+    "Region/state of residence" varchar   NOT NULL,
     "2008" float   NOT NULL,
     "2009" float   NOT NULL,
     "2010" float   NOT NULL,
@@ -173,12 +173,12 @@ CREATE TABLE "Physicians_and_Clinics" (
     "2019" float   NOT NULL,
     "2020" float   NOT NULL,
     CONSTRAINT "pk_Physicians_and_Clinics" PRIMARY KEY (
-        "Region/State"
+        "Region/state of residence"
      )
 );
 
 CREATE TABLE "Hospitals" (
-    "Region/State" varchar   NOT NULL,
+    "Region/state of residence" varchar   NOT NULL,
     "2008" float   NOT NULL,
     "2009" float   NOT NULL,
     "2010" float   NOT NULL,
@@ -193,12 +193,12 @@ CREATE TABLE "Hospitals" (
     "2019" float   NOT NULL,
     "2020" float   NOT NULL,
     CONSTRAINT "pk_Hospitals" PRIMARY KEY (
-        "Region/State"
+        "Region/state of residence"
      )
 );
 
 CREATE TABLE "Home_Healthcare" (
-    "Region/State" varchar   NOT NULL,
+    "Region/state of residence" varchar   NOT NULL,
     "2008" float   NOT NULL,
     "2009" float   NOT NULL,
     "2010" float   NOT NULL,
@@ -213,12 +213,12 @@ CREATE TABLE "Home_Healthcare" (
     "2019" float   NOT NULL,
     "2020" float   NOT NULL,
     CONSTRAINT "pk_Home_Healthcare" PRIMARY KEY (
-        "Region/State"
+        "Region/state of residence"
      )
 );
 
 CREATE TABLE "Nursing" (
-    "Region/State" varchar   NOT NULL,
+    "Region/state of residence" varchar   NOT NULL,
     "2008" float   NOT NULL,
     "2009" float   NOT NULL,
     "2010" float   NOT NULL,
@@ -233,12 +233,12 @@ CREATE TABLE "Nursing" (
     "2019" float   NOT NULL,
     "2020" float   NOT NULL,
     CONSTRAINT "pk_Nursing" PRIMARY KEY (
-        "Region/State"
+        "Region/state of residence"
      )
 );
 
 CREATE TABLE "Medicare" (
-    "State" varchar   NOT NULL,    
+    "Region/state of residence" varchar   NOT NULL,    
     "2008" int   NOT NULL,
     "2009" int   NOT NULL,
     "2010" int   NOT NULL,
@@ -253,12 +253,12 @@ CREATE TABLE "Medicare" (
     "2019" int   NOT NULL,
     "2020" int   NOT NULL,
     CONSTRAINT "pk_Medicare" PRIMARY KEY (
-        "State"
+        "Region/state of residence"
      )
 );
 
 CREATE TABLE "Medicaid" (
-    "State" varchar   NOT NULL,
+    "Region/state of residence" varchar   NOT NULL,
     "2008" int   NOT NULL,
     "2009" int   NOT NULL,
     "2010" int   NOT NULL,
@@ -273,7 +273,7 @@ CREATE TABLE "Medicaid" (
     "2019" int   NOT NULL,
     "2020" int   NOT NULL,
     CONSTRAINT "pk_Medicaid" PRIMARY KEY (
-        "State"
+        "Region/state of residence"
      )
 );
 
