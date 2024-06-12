@@ -1,4 +1,4 @@
-﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
+-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
 -- Link to schema: https://app.quickdatabasediagrams.com/#/d/NYNprB
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
@@ -80,10 +80,8 @@ CREATE TABLE "healthcare_expenditures" (
      )
 );
 
-income_per_capita
 
 CREATE TABLE "income_per_capita" (
-    "Region/state of residence" varchar   NOT NULL,
     "2008" float   NOT NULL,
     "2009" float   NOT NULL,
     "2010" float   NOT NULL,
@@ -97,6 +95,7 @@ CREATE TABLE "income_per_capita" (
     "2018" float   NOT NULL,
     "2019" float   NOT NULL,
     "2020" float   NOT NULL,
+	"region/state of residence" varchar   NOT NULL,
     CONSTRAINT "pk_income_per_capita" PRIMARY KEY (
         "region/state of residence"
      )
@@ -221,7 +220,3 @@ CREATE TABLE "medicaid" (
         "region/state of residence"
      )
 );
-
-ALTER TABLE "income_per_capita" ADD CONSTRAINT "fk_income_per_capita_date" FOREIGN KEY("date")
-REFERENCES "healthcare_expenditures" ("date");
-
