@@ -25,8 +25,9 @@ ALTER TABLE "Income_per_capita"
 DROP COLUMN "2021",
 DROP COLUMN "2022"; 
 
-
-CREATE TABLE "Regional_averages_income" AS
+Drop Table "Regional_averages_income"
+Drop Table "regional_averages_income"
+CREATE TABLE "regional_averages_income" AS
 SELECT 
     region,
     AVG("2008") AS avg_2008,
@@ -49,7 +50,7 @@ FROM
                 WHEN "Region/state of residence" IN ('Alabama','Arkansas', 'Florida', 'Georgia', 'Kentucky', 'Mississippi','Louisiana', 'South Carolina','North Carolina', 'Tennessee','West Virginia') THEN 'Southeast'
                 WHEN "Region/state of residence" IN ('Arizona', 'Oklahoma','New Mexico', 'Texas') THEN 'Southwest'
                 WHEN "Region/state of residence" IN ('Alaska', 'California','Hawaii', 'Nevada','Oregon', 'Washington') THEN 'Far West'
-                WHEN "Region/state of residence" IN ('Alaska', 'Idaho', 'Montana', 'Oregon', 'Washington', 'Wyoming') THEN 'Northwest'
+                WHEN "Region/state of residence" IN ('Colorado','Idaho', 'Montana', 'Oregon', 'Washington', 'Wyoming') THEN 'Rocky Mountains'
                 WHEN "Region/state of residence" IN ('Illinois', 'Indiana', 'Michigan', 'Ohio', 'Wisconsin') THEN 'Great Lakes'
                 WHEN "Region/state of residence" IN ('Iowa', 'Kansas', 'Minnesota', 'Missouri', 'Nebraska', 'North Dakota', 'South Dakota') THEN 'Plains'
                 WHEN "Region/state of residence" IN ('Connecticut', 'Maine', 'Massachusetts', 'New Hampshire', 'Rhode Island', 'Vermont') THEN 'New England'
@@ -66,7 +67,7 @@ GROUP BY
 ORDER BY 
     region;
 	
-ALTER TABLE "Regional_averages_income"
+ALTER TABLE "regional_averages_income"
 ALTER COLUMN avg_2008 Type INT,
 ALTER COLUMN avg_2009 Type INT,
 ALTER COLUMN avg_2010 Type INT,
@@ -81,48 +82,48 @@ ALTER COLUMN avg_2018 Type INT,
 ALTER COLUMN avg_2019 Type INT,
 ALTER COLUMN avg_2020 Type INT;
 
-UPDATE "Regional_averages_income"
+UPDATE "regional_averages_income"
 SET region = CONCAT(region, ' Average Income');
 
-ALTER TABLE "Regional_averages_income"
+ALTER TABLE "regional_averages_income"
 RENAME COLUMN avg_2008 TO "2008";
 
-ALTER TABLE "Regional_averages_income"
+ALTER TABLE "regional_averages_income"
 RENAME COLUMN avg_2009 TO "2009";
 
-ALTER TABLE "Regional_averages_income"
+ALTER TABLE "regional_averages_income"
 RENAME COLUMN avg_2010 TO "2010";
 
-ALTER TABLE "Regional_averages_income"
+ALTER TABLE "regional_averages_income"
 RENAME COLUMN avg_2011 TO "2011";
 
-ALTER TABLE "Regional_averages_income"
+ALTER TABLE "regional_averages_income"
 RENAME COLUMN avg_2012 TO "2012";
 
-ALTER TABLE "Regional_averages_income"
+ALTER TABLE "regional_averages_income"
 RENAME COLUMN avg_2013 TO "2013";
 
-ALTER TABLE "Regional_averages_income"
+ALTER TABLE "regional_averages_income"
 RENAME COLUMN avg_2014 TO "2014";
 
-ALTER TABLE "Regional_averages_income"
+ALTER TABLE "regional_averages_income"
 RENAME COLUMN avg_2015 TO "2015";
 
-ALTER TABLE "Regional_averages_income"
+ALTER TABLE "regional_averages_income"
 RENAME COLUMN avg_2016 TO "2016";
 
-ALTER TABLE "Regional_averages_income"
+ALTER TABLE "regional_averages_income"
 RENAME COLUMN avg_2017 TO "2017";
 
-ALTER TABLE "Regional_averages_income"
+ALTER TABLE "regional_averages_income"
 RENAME COLUMN avg_2018 TO "2018";
 
-ALTER TABLE "Regional_averages_income"
+ALTER TABLE "regional_averages_income"
 RENAME COLUMN avg_2019 TO "2019";
 
-ALTER TABLE "Regional_averages_income"
+ALTER TABLE "regional_averages_income"
 RENAME COLUMN avg_2020 TO "2020";
 
-Select * From "Regional_averages_income";
+Select * From "regional_averages_income";
 Select * From "Income_per_capita";
 
