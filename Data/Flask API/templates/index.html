@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Data Visualization</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Interactive Data Visualization</h1>
+    <form id="plot-form">
+        <label for="dataset1">Select Dataset 1:</label>
+        <select id="dataset1" name="dataset1">
+            <option value="none">None</option>
+            <option value="realincome">Real Income</option>
+            <option value="physician_and_clinics">Physician and Clinics</option>
+            <option value="other_professionals">Other Professionals</option>
+            <option value="nursing">Nursing</option>
+            <option value="home_health">Home Health</option>
+            <option value="healthexpenditures">Health Expenditures</option>
+            <option value="medicare">Medicare</option>
+            <option value="medicaid">Medicaid</option>
+            <option value="private_enrollee">Private Enrollee</option>
+            <option value="personal_health_care">Personal Health Care</option>
+            <option value="hospital">Hospital</option>
+        </select>
+        <label for="dataset2">Select Dataset 2:</label>
+        <select id="dataset2" name="dataset2">
+            <option value="none">None</option>
+            <option value="realincome">Real Income</option>
+            <option value="physician_and_clinics">Physician and Clinics</option>
+            <option value="other_professionals">Other Professionals</option>
+            <option value="nursing">Nursing</option>
+            <option value="home_health">Home Health</option>
+            <option value="healthexpenditures">Health Expenditures</option>
+            <option value="medicare">Medicare</option>
+            <option value="medicaid">Medicaid</option>
+            <option value="private_enrollee">Private Enrollee</option>
+            <option value="personal_health_care">Personal Health Care</option>
+            <option value="hospital">Hospital</option>
+        </select>
+        <label for="x_col">X Column:</label>
+        <select id="x_col" name="x_col">
+            <option value="">Select a column</option>
+        </select>
+        <label for="y_col">Y Column:</label>
+        <select id="y_col" name="y_col">
+            <option value="">Select a column</option>
+        </select>
+        <label for="plot_type">Plot Type:</label>
+        <select id="plot_type" name="plot_type">
+            <option value="bar">Bar Plot</option>
+            <option value="line">Line Plot</option>
+            <option value="scatter">Scatter Plot</option>
+            <option value="histogram">Histogram</option>
+        </select>
+        <button type="submit">Generate Plot</button>
+    </form>
+    <div id="plot">
+        <img id="plot-image" src="">
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
