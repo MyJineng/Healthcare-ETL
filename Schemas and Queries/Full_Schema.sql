@@ -218,6 +218,26 @@ CREATE TABLE "medicaid" (
      )
 );
 
+CREATE TABLE "personal_healthcare" (
+    "region/state of residence" varchar   NOT NULL,
+    "2008" int   NOT NULL,
+    "2009" int   NOT NULL,
+    "2010" int   NOT NULL,
+    "2011" int   NOT NULL,
+    "2012" int   NOT NULL,
+    "2013" int   NOT NULL,
+    "2014" int   NOT NULL,
+    "2015" int   NOT NULL,
+    "2016" int   NOT NULL,
+    "2017" int   NOT NULL,
+    "2018" int   NOT NULL,
+    "2019" int   NOT NULL,
+    "2020" int   NOT NULL,
+    CONSTRAINT "pk_personal_healthcare" PRIMARY KEY (
+        "region/state of residence"
+     )
+);
+
 -- Table Import list from Healthcare-ETL-main\Healthcare-ETL-main\Data
 -- healthcare_expenditures --> healthexpenditures.csv
 -- home_healthcare --> Home Health.csv
@@ -228,3 +248,4 @@ CREATE TABLE "medicaid" (
 -- nursing --> Nursing.csv
 -- physicians and clinics --> Physicians and Clinics.csv
 -- private_ins_per_enrollee --> Private Per Enrolee.csv
+-- personal_healthcare --> Personal Health Care.csv
