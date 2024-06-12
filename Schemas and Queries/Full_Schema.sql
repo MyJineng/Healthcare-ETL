@@ -1,10 +1,5 @@
--- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
--- Link to schema: https://app.quickdatabasediagrams.com/#/d/NYNprB
--- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
-
-
 CREATE TABLE "private_ins_per_enrollee" (
-    "region/state of residence" varchar   NOT NULL,
+    "region/state of Residence" varchar   NOT NULL,
     "2008" int   NOT NULL,
     "2009" int   NOT NULL,
     "2010" int   NOT NULL,
@@ -95,6 +90,8 @@ CREATE TABLE "income_per_capita" (
     "2018" float   NOT NULL,
     "2019" float   NOT NULL,
     "2020" float   NOT NULL,
+	"2021" float   NOT NULL,
+	"2022" float   NOT NULL,
 	"region/state of residence" varchar   NOT NULL,
     CONSTRAINT "pk_income_per_capita" PRIMARY KEY (
         "region/state of residence"
@@ -220,3 +217,14 @@ CREATE TABLE "medicaid" (
         "region/state of residence"
      )
 );
+
+-- Table Import list from Healthcare-ETL-main\Healthcare-ETL-main\Data
+-- healthcare_expenditures --> healthexpenditures.csv
+-- home_healthcare --> Home Health.csv
+-- hospitals --> Hopsital.csv
+-- income_per_capita --> realincome.csv
+-- medicaid --> Medicaid Per Enroleee.csv
+-- medicare --> Medicare Per Enroleee.csv
+-- nursing --> Nursing.csv
+-- physicians and clinics --> Physicians and Clinics.csv
+-- private_ins_per_enrollee --> Private Per Enrolee.csv
