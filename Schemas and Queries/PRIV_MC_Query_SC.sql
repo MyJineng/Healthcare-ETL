@@ -1,92 +1,86 @@
 --change table names
-ALTER TABLE "Medicare"
-RENAME TO Medicare;
-
-ALTER TABLE "Private_Ins_per_Enrollee"
-RENAME TO Private_Insurance;
-
-ALTER TABLE "Medicaid"
-RENAME TO Medicaid;
-
+ALTER TABLE "private_ins_per_enrollee"
+RENAME TO private_Insurance;
 --call tables
-SELECT * FROM Medicare;
-SELECT * FROM Private_Insurance;
-SELECT * FROM Medicaid;
+SELECT * FROM medicare;
+SELECT * FROM private_insurance;
+SELECT * FROM medicaid;
 
 --inner join on three tables - 2010
-SELECT Medicare."State", Medicare."2010", Private_Insurance."2010", Medicaid."2010" FROM Private_Insurance
-INNER JOIN Medicare
-ON Medicare."State" = Private_Insurance."State"
-INNER JOIN Medicaid
-ON Medicaid."State" = Medicare."State";
+SELECT medicare."region/state of residence", medicare."2010", private_insurance."2010", medicaid."2010" FROM private_insurance
+INNER JOIN medicare
+ON medicare."region/state of residence" = private_insurance."state"
+INNER JOIN medicaid
+ON medicaid."region/state of residence" = medicare."region/state of residence";
 
 --Downloaded table to folder and named it "Comparison_2010"
 
 --inner join on three tables - 2015
-SELECT Medicare."State", Medicare."2015", Private_Insurance."2015", Medicaid."2015" FROM Private_Insurance
-INNER JOIN Medicare
-ON Medicare."State" = Private_Insurance."State"
-INNER JOIN Medicaid
-ON Medicaid."State" = Medicare."State";
+SELECT medicare."region/state of residence", medicare."2015", private_insurance."2015", medicaid."2015" FROM private_insurance
+INNER JOIN medicare
+ON medicare."region/state of residence" = private_insurance."region/state of residence"
+INNER JOIN medicaid
+ON medicaid."region/state of residence" = medicare."region/state of residence";
 
 --Downloaded table to folder and named it "Comparison_2015"
 
 --inner join on three tables - 2020
-SELECT Medicare."State", Medicare."2020", Private_Insurance."2020", Medicaid."2020" FROM Private_Insurance
-INNER JOIN Medicare
-ON Medicare."State" = Private_Insurance."State"
-INNER JOIN Medicaid
-ON Medicaid."State" = Medicare."State";
+SELECT medicare."region/state of residence", medicare."2020", private_insurance."2020", medicaid."2020" FROM private_insurance
+INNER JOIN medicare
+ON medicare."region/state of residence" = private_insurance."region/state of residence"
+INNER JOIN medicaid
+ON medicaid."region/state of residence" = medicare."region/state of residence";
 
 --Downloaded table to folder and named it "Comparison_2020"
 
 ---merge all comparisons on state
-SELECT Medicare."State", Medicare."2010", Private_Insurance."2010", Medicaid."2010", 
-		Medicare."2015", Private_Insurance."2015", Medicaid."2015",
-		Medicare."2020", Private_Insurance."2020", Medicaid."2020" FROM Private_Insurance
-INNER JOIN Medicare
-ON Medicare."State" = Private_Insurance."State"
-INNER JOIN Medicaid
-ON Medicaid."State" = Medicare."State";
+SELECT medicare."State", medicare."2010", private_insurance."2010", medicaid."2010", 
+		medicare."2015", private_insurance."2015", medicaid."2015",
+		medicare."2020", private_insurance."2020", medicaid."2020" FROM private_insurance
+INNER JOIN medicare
+ON medicare."region/state of residence" = private_insurance."region/state of residence"
+INNER JOIN medicaid
+ON medicaid."region/state of residence" = medicare."region/state of residence";
 
 --Downloaded table to folder and named it "Comparisons"
 
 --Create new table for query 2015
 CREATE TABLE "2015_Comparison" (
-    "State" varchar   NOT NULL,
+    "region/state of residence" varchar   NOT NULL,
     "2015" int   NOT NULL,
     "2015-2" int   NOT NULL,
     "2015-3" int   NOT NULL,
     CONSTRAINT "pk_2015_Comparison" PRIMARY KEY (
-        "State"
+        "region/state of residence"
      )
 );
 
 --Create new table for query 2010
 CREATE TABLE "2010_Comparison" (
-    "State" varchar   NOT NULL,
+    "region/state of residence" varchar   NOT NULL,
     "2010" int   NOT NULL,
     "2010-2" int   NOT NULL,
     "2010-3" int   NOT NULL,
     CONSTRAINT "pk_2010_Comparison" PRIMARY KEY (
-        "State"
+        "region/state of residence"
      )
 );
 
 --Create new table for query 2020
 CREATE TABLE "2020_Comparison" (
-    "State" varchar   NOT NULL,
+    "region/state of residence" varchar   NOT NULL,
     "2020" int   NOT NULL,
     "2020-2" int   NOT NULL,
     "2020-3" int   NOT NULL,
     CONSTRAINT "pk_2020_Comparison" PRIMARY KEY (
-        "State"
+        "region/state of residence"
      )
+	
 );
 
 --Create new table for full comparison
 CREATE TABLE "Comparisons" (
-	"State" varchar   NOT NULL,
+	"region/state of residence" varchar   NOT NULL,
     "2010" int   NOT NULL,
     "2010-2" int   NOT NULL,
     "2010-3" int   NOT NULL,
@@ -96,10 +90,10 @@ CREATE TABLE "Comparisons" (
     "2020-2" int   NOT NULL,
     "2020-3" int   NOT NULL,
     CONSTRAINT "pk_Comparisons" PRIMARY KEY (
-        "State"
+        "region/state of residence"
      )
 );
-	--Added downloaded tables to the database from the folder then ran the tables in postgres to make sure they work.
+	--Imported downloaded tables to the database from the folder then ran the tables in postgres to make sure they work.
 
 
 SELECT * FROM "2010_Comparison";
