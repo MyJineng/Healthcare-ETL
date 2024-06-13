@@ -22,14 +22,14 @@ FROM
     (
         SELECT 
             CASE
-                WHEN "Region/state of residence" IN ('Alabama','Arkansas', 'Florida', 'Georgia', 'Kentucky', 'Mississippi','Louisiana', 'South Carolina','North Carolina', 'Tennessee','West Virginia') THEN 'Southeast'
-                WHEN "Region/state of residence" IN ('Arizona', 'Oklahoma','New Mexico', 'Texas') THEN 'Southwest'
-                WHEN "Region/state of residence" IN ('Alaska', 'California','Hawaii', 'Nevada','Oregon', 'Washington') THEN 'Far West'
-                WHEN "Region/state of residence" IN ('Colorado','Idaho', 'Montana', 'Oregon', 'Washington', 'Wyoming') THEN 'Rocky Mountains'
-                WHEN "Region/state of residence" IN ('Illinois', 'Indiana', 'Michigan', 'Ohio', 'Wisconsin') THEN 'Great Lakes'
-                WHEN "Region/state of residence" IN ('Iowa', 'Kansas', 'Minnesota', 'Missouri', 'Nebraska', 'North Dakota', 'South Dakota') THEN 'Plains'
-                WHEN "Region/state of residence" IN ('Connecticut', 'Maine', 'Massachusetts', 'New Hampshire', 'Rhode Island', 'Vermont') THEN 'New England'
-                WHEN "Region/state of residence" IN ('Delaware', 'Maryland', 'New Jersey', 'New York', 'Pennsylvania') THEN 'Mideast'
+                WHEN "region/state of residence" IN ('Alabama','Arkansas', 'Florida', 'Georgia', 'Kentucky', 'Mississippi','Louisiana', 'South Carolina','North Carolina', 'Tennessee','West Virginia') THEN 'Southeast'
+                WHEN "region/state of residence" IN ('Arizona', 'Oklahoma','New Mexico', 'Texas') THEN 'Southwest'
+                WHEN "region/state of residence" IN ('Alaska', 'California','Hawaii', 'Nevada','Oregon', 'Washington') THEN 'Far West'
+                WHEN "region/state of residence" IN ('Colorado','Idaho', 'Montana', 'Oregon', 'Washington', 'Wyoming') THEN 'Rocky Mountains'
+                WHEN "region/state of residence" IN ('Illinois', 'Indiana', 'Michigan', 'Ohio', 'Wisconsin') THEN 'Great Lakes'
+                WHEN "region/state of residence" IN ('Iowa', 'Kansas', 'Minnesota', 'Missouri', 'Nebraska', 'North Dakota', 'South Dakota') THEN 'Plains'
+                WHEN "region/state of residence" IN ('Connecticut', 'Maine', 'Massachusetts', 'New Hampshire', 'Rhode Island', 'Vermont') THEN 'New England'
+                WHEN "region/state of residence" IN ('Delaware', 'Maryland', 'New Jersey', 'New York', 'Pennsylvania') THEN 'Mideast'
             END AS region,
             "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"
         FROM 
