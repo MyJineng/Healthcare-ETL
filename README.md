@@ -18,8 +18,7 @@ Full_Schema.sql -->
 lst import realincome.csv and then personal_healthcare.csv
 2nd import rest of csvs
 
-PRI_MC_SCHEMA_SC.sql-->
-run query PRIV_MC_Query_SC.sql
+Insurance.SQL
 
 Personal Health Care by Region.sql-->
 run query Regional income per capita.sql
