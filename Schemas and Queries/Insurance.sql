@@ -97,3 +97,17 @@ INNER JOIN medicaid ON medicaid."region/state of residence" = medicare."region/s
 
 ---Call Table Comparisons
 SELECT * FROM "Comparisons"
+
+CREATE TABLE "Combined_2020" (
+    "region/state of residence" varchar   NOT NULL,
+    "Nursing_2020" int   NOT NULL,
+    "HomeHealth_2020" int   NOT NULL,
+    CONSTRAINT "pk_Combined_2020" PRIMARY KEY (
+        "region/state of residence"
+     )
+);
+
+INSERT INTO "Combined_2020"("region/state of residence", "Nursing_2020", "HomeHealth_2020")
+SELECT nursing."region/state of residence", nursing."2020" AS "Nursing_2020", home_healthcare."2020" AS "HomeHealth_2020"
+FROM home_healthcare
+INNER JOIN nursing ON nursing."region/state of residence" = home_healthcare."region/state of residence";
