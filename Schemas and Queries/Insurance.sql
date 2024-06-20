@@ -32,7 +32,7 @@ INNER JOIN Medicare ON Medicare."region/state_of_residence" = Private_Insurance.
 INNER JOIN Medicaid ON Medicaid."region/state_of_residence" = Medicare."region/state_of_residence";
 
 --Call table - 2010
-SELECT * FROM "2010_Comparison"
+SELECT * FROM "2010_Comparison";
 
 --Create new table for query 2015
 CREATE TABLE "2015_Comparison" (
@@ -53,7 +53,7 @@ INNER JOIN Medicare ON Medicare."region/state_of_residence" = Private_Insurance.
 INNER JOIN Medicaid ON Medicaid."region/state_of_residence" = Medicare."region/state_of_residence";
 
 --Call table 2015
-SELECT * FROM "2015_Comparison"
+SELECT * FROM "2015_Comparison";
 
 --Create new table for query 2020
 CREATE TABLE "2020_Comparison" (
@@ -103,7 +103,7 @@ INNER JOIN Medicare ON Medicare."region/state_of_residence" = Private_Insurance.
 INNER JOIN Medicaid ON Medicaid."region/state_of_residence" = Medicare."region/state_of_residence";
 
 ---Call Table Comparisons
-SELECT * FROM "Comparisons"
+SELECT * FROM "Comparisons";
 
 ---Create a Combined Table
 CREATE TABLE "Combined_2020" (
